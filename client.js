@@ -17,6 +17,7 @@ addPeople();
 
 function compareNames() {
     console.log('in compareNames function', (String($(this).data('id'))));
+    showCorrectBox();
 }
 // function compareNames() {
 //     for (let person of people) {
@@ -25,6 +26,9 @@ function compareNames() {
 //         }
 //     }
 // }
+function showCorrectBox() {
+    alert ('You got it!!!')
+}
 
 // creating function to append divs to the dom with class, id, and also data-id. cycle through person.githubUsername
 function addPeople() {
