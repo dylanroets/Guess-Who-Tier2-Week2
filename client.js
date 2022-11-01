@@ -6,6 +6,7 @@ console.log('people in clientjs: ', people);
 function onReady() {
 console.log('in onReady');
 
+
 addPeople();
 
 
@@ -16,6 +17,7 @@ function addPeople() {
     // COME BACK HERE to possibly clear out rendered people, came back and did it
     $('#div-element').empty();
 
+    // i'll have individual first names as the data id to select for questions as well as click there boxes
     for(let person of people) {
         $('#div-element').append(`
         <div class="peopleInDivs" data-id"${person.name}>
@@ -25,3 +27,14 @@ function addPeople() {
     }
 }
 
+// Adding random number generator
+function randomNumber(min, max){
+    return Math.floor(Math.random() * (1 + max - min) + min);
+}
+
+//just console log testing here
+function scroll() {
+    for (let person of people) {
+        console.log(person.name)
+    }
+}gi
