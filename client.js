@@ -5,6 +5,8 @@ console.log('people in clientjs: ', people);
 
 function onReady() {
 console.log('in onReady');
+//setting up button to start on click the image and start a function
+$(document).on('click', '#image-btn', compareNames)
 
 
 addPeople();
@@ -12,6 +14,11 @@ addPeople();
 
 }
 
+function compareNames() {
+    console.log('in compareNames');
+}
+
+// creating function to append divs to the dom with class, id, and also data-id. cycle through person.githubUsername
 function addPeople() {
     console.log('in add people');
     // COME BACK HERE to possibly clear out rendered people, came back and did it
@@ -20,7 +27,7 @@ function addPeople() {
     // i'll have individual first names as the data id to select for questions as well as click there boxes
     for(let person of people) {
         $('#div-element').append(`
-        <div class="peopleInDivs" data-id"${person.name}>
+        <div class="peopleInDivs" id="image-btn" data-id"${person.name}>
             <img src="https://github.com/${person.githubUsername}.png?size=250" alt="Profile image of dylan">
         </div>
         `)
@@ -37,4 +44,8 @@ function scroll() {
     for (let person of people) {
         console.log(person.name)
     }
-}gi
+}
+
+scroll();
+
+$(this).data('id')
