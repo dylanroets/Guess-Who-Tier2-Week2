@@ -13,10 +13,18 @@ addPeople();
 
 
 }
+//I was struggling trying to come up with a function to match the id person.name to the selected image name
 
 function compareNames() {
-    console.log('in compareNames');
+    console.log('in compareNames function', (String($(this).data('id'))));
 }
+// function compareNames() {
+//     for (let person of people) {
+//         if (String($(this).data('id')) {
+//             console.log('Match')
+//         }
+//     }
+// }
 
 // creating function to append divs to the dom with class, id, and also data-id. cycle through person.githubUsername
 function addPeople() {
@@ -27,7 +35,7 @@ function addPeople() {
     // i'll have individual first names as the data id to select for questions as well as click there boxes
     for(let person of people) {
         $('#div-element').append(`
-        <div class="peopleInDivs" id="image-btn" data-id"${person.name}>
+        <div class="peopleInDivs" id="image-btn" data-id="${person.name}">
             <img src="https://github.com/${person.githubUsername}.png?size=250" alt="Profile image of dylan">
         </div>
         `)
@@ -47,5 +55,3 @@ function scroll() {
 }
 
 scroll();
-
-$(this).data('id')
